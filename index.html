@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101114"><title>HYROX TRAINING</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;background:#101114;color:#f5f4ee}*{box-sizing:border-box}body{margin:0 auto;padding:env(safe-area-inset-top) 18px 90px;max-width:600px}header{padding:24px 0 14px;border-bottom:1px solid #333}small,.muted{color:#999}h1{font-size:26px;letter-spacing:2px;margin:4px 0}h2{font-size:17px;margin:0 0 12px}button,input,select{font:inherit} .setting-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.setting-card{border:1px solid #35363a;border-radius:12px;padding:12px;margin:10px 0}.setting-card h3{margin:0 0 8px;font-size:14px}.setting-card label{margin:6px 0}.setting-actions{display:flex;gap:8px;margin-top:8px}.setting-actions button{flex:1;padding:9px}.setting-card input{margin-top:3px}button{background:#e6fa62;color:#111;border:0;border-radius:10px;padding:12px 14px;font-weight:750;cursor:pointer}button.secondary{background:#292b30;color:#eee}button:disabled{opacity:.35;cursor:not-allowed}.tabs,.controls{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}.tabs button,.controls button{flex:1}.tabs button.active{background:#e6fa62;color:#111}.panel{background:#1c1e22;border:1px solid #35363a;border-radius:16px;padding:18px;margin:12px 0}.timer{font-size:48px;font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:-2px}.step{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #34363a;padding:12px 0}.step:last-child{border:0}.step.done{opacity:.78}.step strong{display:block;font-size:14px}.step span{font-size:12px;color:#aaa}.step-right{display:flex;align-items:center;gap:8px}.step-right button{min-width:65px}.lap-time{font-variant-numeric:tabular-nums;font-weight:800;color:#e6fa62;white-space:nowrap}.history-card{border-top:1px solid #3a3c40;padding:16px 0}.history-card:first-child{border-top:0}.history-row{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #303237;font-size:12px}.history-row span:last-child{white-space:nowrap;font-weight:700}.history-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.history-head button{padding:8px}.tag{font-size:12px;background:#34363a;border-radius:5px;padding:5px 8px;color:#ddd}input,select{width:100%;padding:11px;background:#111216;color:white;border:1px solid #444;border-radius:8px;margin-top:6px}label{display:block;font-size:13px;color:#bbb;margin:12px 0}.hide{display:none!important}.big{font-size:28px;font-weight:800}.notice,footer{color:#999;font-size:12px;line-height:1.6}footer{margin:25px 0}summary{cursor:pointer;padding:8px 0}
+.step-main{display:flex;align-items:center;gap:10px;min-width:0;flex:1}.step-copy{min-width:0}.step-copy strong{overflow-wrap:anywhere}.pictogram{width:46px;height:46px;flex:0 0 46px;border:1px solid #454a4d;border-radius:10px;background:#25282b;display:grid;place-items:center;color:#e6fa62}.pictogram svg{width:38px;height:38px}.step-target{display:block!important;margin-top:7px;color:#f0c46c!important;font-size:13px!important;font-weight:750;line-height:1.45;white-space:pre-line}.step-detail{display:block;line-height:1.4}.step{gap:5px}.step-right{gap:5px}.step button{min-width:58px;padding:10px 8px}.setting-card .goal-label{color:#f0c46c}.history-goal{display:block;color:#f0c46c;font-size:12px;margin-top:4px}.calendar-nav{display:flex;align-items:center;justify-content:space-between;gap:12px}.calendar-nav button{padding:8px 16px;font-size:23px}.month-count{font-size:16px;font-weight:750;color:#e6fa62;margin:12px 0}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.calendar-weekday{text-align:center;color:#aaa;font-size:12px;padding:6px 0}.calendar-day{position:relative;min-height:46px;padding:8px 0 14px;border:1px solid #34363a;background:#25272b;color:#f5f4ee;border-radius:9px;font-size:15px;font-weight:700}.calendar-day.has-workout{border-color:#b6d151}.calendar-day.has-workout:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#e6fa62;bottom:5px;left:calc(50% - 3px)}.calendar-day.selected{background:#e6fa62;color:#111}.calendar-day.selected:after{background:#111}.calendar-day:disabled{opacity:.18}.history-card{padding:16px 0}.history-head strong{font-size:16px}.history-head .muted{font-size:14px;line-height:1.6}.history-row{font-size:15px;line-height:1.5;align-items:start;gap:12px}.history-row>span:first-child{min-width:0;flex:1}.history-row>span:last-child{font-size:16px;white-space:nowrap}.history-editor{border-top:1px solid #34363a;margin-top:12px;padding-top:12px}.history-edit-row{border-bottom:1px solid #34363a;padding:12px 0}.history-edit-row strong{font-size:15px}.history-edit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.history-edit-grid label{font-size:13px}.history-edit-grid input{font-size:16px}.history-card details summary{cursor:pointer;padding:10px 0;font-size:15px;color:#e6fa62}.history-card button{font-size:13px}</style></head><body>
+<header><small>99T HERITAGE / FIELD TRAINING</small><h1>HYROX <span style="color:#e6fa62">TRAINING</span></h1><small>OUTDOOR / INDOOR · SESSION TRACKER v1.6</small></header>
+<nav class="tabs"><button id="tabTrain" class="active" onclick="tab('train')">SESSION</button><button id="tabHistory" class="secondary" onclick="tab('history')">HISTORY</button><button id="tabSettings" class="secondary" onclick="tab('settings')">SETTINGS</button></nav>
+<main id="train">
+<div class="panel"><small>TRAINING MODE</small><div class="controls"><button id="modeOutdoor" onclick="setMode('outdoor')">OUTDOOR</button><button id="modeIndoor" class="secondary" onclick="setMode('indoor')">INDOOR</button></div><p class="notice" id="modeDescription"></p></div>
+<div class="panel"><small>ELAPSED TIME</small><div class="timer" id="clock">00:00:00</div><div class="controls"><button id="startBtn" onclick="startOrResume()">START</button><button id="pauseBtn" class="secondary" onclick="pauseTimer()" disabled>PAUSE</button><button class="secondary" onclick="finish()">FINISH & SAVE</button></div></div>
+<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><h2>WORKOUT FLOW</h2><span class="tag" id="progress">0 / 12</span></div><div id="steps"></div><p class="notice">STARTで開始、PAUSEで停止、RESUMEで再開。各種目のDONEでラップを確定します。DONEは上から順番に押してください。</p></div>
+<div class="panel" id="hangPanel"><h2>DEAD HANG TIMER</h2><div class="big" id="hangClock">00:30</div><div class="controls"><button onclick="hangStart()">START / PAUSE</button><button class="secondary" onclick="hangReset()">RESET</button></div><small>目標秒数はSETTINGSで変更できます。</small></div>
+</main>
+<main id="history" class="hide"><div class="panel"><h2>TRAINING CALENDAR</h2><div class="calendar-nav"><button class="secondary" onclick="changeMonth(-1)">‹</button><strong id="calendarTitle"></strong><button class="secondary" onclick="changeMonth(1)">›</button></div><div id="monthCount" class="month-count"></div><div id="calendarGrid" class="calendar-grid"></div></div><div class="panel"><h2 id="selectedDateTitle">SESSION HISTORY</h2><div id="historyList"></div></div></main>
+<main id="settings" class="hide"><div class="panel"><h2>OUTDOOR SETTINGS</h2><p class="notice">OUTDOORの種目設定です。INDOORの種目・重量・回数・セット数は下で編集できます。</p><label>ランニング距離（各セット）<select id="runDistance" onchange="updateSettings()"><option value="800">800m</option><option value="1000">1km</option></select></label><label>デッドハング目標秒数<input id="hangTarget" type="number" min="5" max="300" onchange="updateSettings()"></label><label>懸垂回数<input id="pullups" type="number" min="1" max="100" onchange="updateSettings()"></label><label>ランジ歩数<input id="lunges" type="number" min="1" max="300" onchange="updateSettings()"></label><label>腕立て回数<input id="pushups" type="number" min="1" max="300" onchange="updateSettings()"></label><label>バーピー回数<input id="burpees" type="number" min="1" max="300" onchange="updateSettings()"></label><label>バーピーブロードジャンプ距離(m)<input id="broad" type="number" min="1" max="200" onchange="updateSettings()"></label></div><div class="panel"><h2>INDOOR SETTINGS</h2><p class="notice">種目名、重量（kg）、1セットの回数、セット数を変更できます。ランは距離（m）を回数欄に入力してください。ランジの回数は左右合計です。設定は自動保存され、次回のセッションに引き継がれます。</p><div id="indoorSettings"></div><div class="controls"><button class="secondary" onclick="addIndoorStep()">＋ ADD EXERCISE</button><button class="secondary" onclick="resetIndoorDefaults()">RESTORE DEFAULTS</button></div></div><div class="panel"><button class="secondary" onclick="resetSession(true)">RESET CURRENT SESSION</button></div></main>
+<footer>記録はこの端末のブラウザ内に保存されます。ブラウザのデータ消去時には失われる場合があります。</footer>
+<script>
+const defaults={runDistance:800,hangTarget:30,pullups:6,lunges:40,pushups:20,burpees:15,broad:20};
+const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
+let cfg={...defaults,...read('hyrox_cfg',{})};
+const fresh=(mode='outdoor')=>({mode,done:[],laps:[],elapsed:0,running:false,splitStart:0});
+let session={...fresh(),...read('hyrox_session',{})};session.mode=session.mode||'outdoor';session.running=false;
+if(!Number.isFinite(session.splitStart))session.splitStart=session.done.reduce((sum,k)=>sum+(session.laps[k]||0),0);
+let started=0,hangLeft=cfg.hangTarget,hangRunning=false,hangStarted=0;
+const pad=n=>String(n).padStart(2,'0');
+const fmt=s=>{s=Math.max(0,Math.floor(s||0));return `${pad(Math.floor(s/3600))}:${pad(Math.floor(s%3600/60))}:${pad(s%60)}`};
+const short=s=>{s=Math.max(0,Math.floor(s||0));return s>=3600?fmt(s):`${pad(Math.floor(s/60))}:${pad(s%60)}`};
+const currentElapsed=()=>session.elapsed+(session.running?(Date.now()-started)/1000:0);
+const stepsFor=c=>Array.from({length:6},(_,i)=>[{name:'RUN',detail:c.runDistance+'m'},{name:['BURPEE BROAD JUMP','WALKING LUNGE','PULL-UPS','DEAD HANG','PUSH-UPS','BURPEES'][i],detail:[c.broad+'m',c.lunges+' steps',c.pullups+' reps',c.hangTarget+' sec',c.pushups+' reps',c.burpees+' reps'][i]}]).flat();
+const indoorDefaults=[
+{name:'ROPE PULLDOWN',reps:100,sets:1,weight:0,unit:'回',note:'SkiErg想定・懸垂に近い動作',icon:'pull'},
+{name:'DUMBBELL BACK LUNGE',reps:25,sets:2,weight:14,unit:'回',note:'左右合計・片手14kg・握力',icon:'backlunge'},
+{name:'DUMBBELL FRONT LUNGE',reps:10,sets:5,weight:14,unit:'回',note:'左右合計・片手14kg・心肺',icon:'frontlunge'},
+{name:'BALL SQUAT',reps:15,sets:3,weight:10,unit:'回',note:'Wall Balls想定',icon:'squat'},
+{name:'ONE-HAND ROPE DOWN',reps:50,sets:1,weight:6.25,unit:'回',note:'片手ケーブル',icon:'onehand'},
+{name:'ROWING',reps:60,sets:1,weight:18,unit:'回',note:'ローイングマシン',icon:'row'}
+];
+const normalizeIndoor=x=>({...x,reps:Number(x.reps)||0,sets:Number(x.sets)||1,weight:Number(x.weight)||0,unit:x.unit||'回'});
+let indoorConfig=read('hyrox_indoor_settings',null);
+if(!Array.isArray(indoorConfig))indoorConfig=indoorDefaults.map(x=>({...x}));
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const indoorSteps=()=>indoorConfig.map(x=>({name:x.name,detail:`${x.reps}${x.unit||'回'} × ${x.sets}セット${x.weight?' · '+x.weight+'kg':''}`,note:x.note||'',icon:x.icon||'general'}));
+function renderIndoorSettings(){
+ document.getElementById('indoorSettings').innerHTML=indoorConfig.map((x,i)=>`<div class="setting-card"><h3>${pad(i+1)} ${esc(x.name)}</h3><label>種目名<input data-i="${i}" data-k="name" value="${esc(x.name)}"></label><div class="setting-grid"><label>重量 (kg)<input type="number" min="0" step="0.25" data-i="${i}" data-k="weight" value="${x.weight}"></label><label>回数 / 距離<input type="number" min="0" step="1" data-i="${i}" data-k="reps" value="${x.reps}"></label><label>セット数<input type="number" min="1" step="1" data-i="${i}" data-k="sets" value="${x.sets}"></label><label>単位<select data-i="${i}" data-k="unit"><option value="回" ${x.unit==='回'?'selected':''}>回</option><option value="m" ${x.unit==='m'?'selected':''}>m</option><option value="秒" ${x.unit==='秒'?'selected':''}>秒</option></select></label></div><label class="goal-label">目標・備考（SESSIONではセット数の下に強調表示）<input data-i="${i}" data-k="note" value="${esc(x.note)}"></label><label>ピクトグラム<select data-i="${i}" data-k="icon">${[['pull','ローププルダウン'],['backlunge','バックランジ'],['frontlunge','フロントランジ'],['squat','スクワット'],['onehand','片手ロープ'],['row','ローイング'],['run','ラン'],['general','一般トレーニング']].map(([v,t])=>`<option value="${v}" ${x.icon===v?'selected':''}>${t}</option>`).join('')}</select></label><div class="setting-actions"><button class="secondary" onclick="moveIndoor(${i},-1)">↑</button><button class="secondary" onclick="moveIndoor(${i},1)">↓</button><button class="secondary" onclick="removeIndoor(${i})">削除</button></div></div>`).join('');
+}
+function storeIndoor(){localStorage.setItem('hyrox_indoor_settings',JSON.stringify(indoorConfig));render()}
+document.getElementById('indoorSettings').addEventListener('change',e=>{
+ const i=Number(e.target.dataset.i),k=e.target.dataset.k;
+ if(!Number.isInteger(i)||!k||!indoorConfig[i])return;
+ indoorConfig[i][k]=['weight','reps','sets'].includes(k)?Number(e.target.value):e.target.value;
+ indoorConfig[i]=normalizeIndoor(indoorConfig[i]);storeIndoor();renderIndoorSettings();
+});
+function addIndoorStep(){indoorConfig.push({name:'NEW EXERCISE',reps:10,sets:1,weight:0,unit:'回',note:'',icon:'general'});storeIndoor();renderIndoorSettings()}
+function removeIndoor(i){if(indoorConfig.length<=1){alert('最低1種目必要です');return}if(!confirm('この種目を削除しますか？'))return;indoorConfig.splice(i,1);storeIndoor();renderIndoorSettings()}
+function moveIndoor(i,delta){const j=i+delta;if(j<0||j>=indoorConfig.length)return;[indoorConfig[i],indoorConfig[j]]=[indoorConfig[j],indoorConfig[i]];storeIndoor();renderIndoorSettings()}
+function resetIndoorDefaults(){if(!confirm('INDOORの設定を初期値に戻しますか？'))return;indoorConfig=indoorDefaults.map(x=>({...x}));storeIndoor();renderIndoorSettings()}
+const legacyIndoorSteps=()=>[
+{name:'RUN',detail:'500m · トレッドミル'},
+{name:'ROPE PULLDOWN',detail:'左右15回 × 3セット'},
+{name:'DUMBBELL BACK LUNGE',detail:'左右15回 × 2セット'},
+{name:'DUMBBELL FRONT LUNGE',detail:'左右25回ずつ'},
+{name:'PLATE SQUAT + PRESS',detail:'15回 × 3セット'},
+{name:'ROWING',detail:'500m'}];
+const figurePaths={
+pull:'<path d="M6 4h36M12 4v9m24-9v9"/><circle cx="24" cy="16" r="4"/><path d="M24 20v12m0-9-10-8m10 8 10-8M24 32l-8 11m8-11 8 11"/>',
+backlunge:'<circle cx="24" cy="9" r="4"/><path d="M24 13l-3 13 11 6 8 10M21 26l-11 9-5 8M17 18l-7 8m18-8 7 8"/><rect x="6" y="25" width="6" height="8" rx="1"/><rect x="33" y="25" width="6" height="8" rx="1"/>',
+frontlunge:'<circle cx="19" cy="9" r="4"/><path d="M19 13l5 13 11 8 7 9M24 26l-12 9-7 8M15 19l-6 8m17-8 8 8"/><rect x="5" y="25" width="6" height="8" rx="1"/><rect x="34" y="25" width="6" height="8" rx="1"/>',
+squat:'<circle cx="24" cy="12" r="4"/><circle cx="24" cy="3" r="2"/><path d="M24 16l-2 12-12 4-4 11m16-15 12 4 8 11M22 19 13 9m11 10 11-10"/>',
+onehand:'<path d="M37 4v10"/><circle cx="23" cy="15" r="4"/><path d="M23 19v14l-9 10m9-10 9 10M23 22l12-8m-12 8-12 7"/><path d="M32 14h8"/>',
+row:'<circle cx="15" cy="14" r="4"/><path d="M15 18l9 12 12-1m-12 1-8 12m8-12 13 12M17 24l-9 8m-5 10h42M35 10l-3 25"/>',
+run:'<circle cx="26" cy="9" r="4"/><path d="M23 15l-8 11 13 5 10 11M15 26 5 33m23-2-12 11m7-27 12 7"/>',
+general:'<circle cx="24" cy="12" r="5"/><path d="M24 17v15m-14-8 14-7 14 7M24 32 14 43m10-11 10 11"/>'
+};
+function pictogram(kind){return `<span class="pictogram" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${figurePaths[kind]||figurePaths.general}</svg></span>`}
+function inferIcon(s){const n=(s.name||'').toUpperCase();if(n.includes('RUN'))return 'run';if(n.includes('ROW'))return 'row';if(n.includes('SQUAT')||n.includes('WALL'))return 'squat';if(n.includes('LUNGE'))return 'frontlunge';if(n.includes('PULL')||n.includes('HANG'))return 'pull';return 'general'}
+const stepsData=()=>session.steps|| (session.mode==='indoor'?indoorSteps():stepsFor(cfg));
+function save(){localStorage.setItem('hyrox_session',JSON.stringify(session))}
+function nextStep(){return stepsData().findIndex((_,i)=>!session.done.includes(i))}
+function setMode(mode){if(mode===session.mode)return;if(session.done.length||session.elapsed>0||session.running){if(!confirm('メニュー変更で現在のセッションをリセットします。変更しますか？'))return}session=fresh(mode);save();hangReset();render()}
+function render(){
+ document.getElementById('clock').textContent=fmt(currentElapsed());
+ document.getElementById('startBtn').textContent=session.running?'RUNNING':(session.elapsed>0?'RESUME':'START');
+ document.getElementById('startBtn').disabled=session.running;
+ document.getElementById('pauseBtn').disabled=!session.running;
+ document.getElementById('progress').textContent=session.done.length+' / '+stepsData().length;
+ document.getElementById('modeOutdoor').className=session.mode==='outdoor'?'':'secondary';
+ document.getElementById('modeIndoor').className=session.mode==='indoor'?'':'secondary';
+ document.getElementById('modeDescription').textContent=session.mode==='indoor'?'ジム内で完結 · ラン500m＋5種目 · 握力・筋持久力中心':'屋外トレーニング · ラン6区間＋6種目';
+ document.getElementById('hangPanel').classList.toggle('hide',session.mode==='indoor');
+ const active=nextStep();
+ document.getElementById('steps').innerHTML=stepsData().map((s,i)=>{
+  const done=session.done.includes(i),lap=session.laps[i];
+  const time=done&&Number.isFinite(lap)?short(lap):i===active&&currentElapsed()>0?short(currentElapsed()-session.splitStart):'--:--';
+  return `<div class="step ${done?'done':''}"><div class="step-main">${pictogram(s.icon||inferIcon(s))}<div class="step-copy"><small>${pad(i+1)} / ${s.name==='RUN'?'RUN':'STATION'}</small><strong>${esc(s.name)}</strong><span class="step-detail">${esc(s.detail)}</span>${s.note?`<span class="step-target">${esc(s.note)}</span>`:''}</div></div><div class="step-right"><span class="lap-time" id="lap-${i}">${time}</span><button class="${done?'secondary':''}" onclick="complete(${i})">${done?'UNDO':'DONE'}</button></div></div>`
+ }).join('');
+ document.getElementById('hangClock').textContent=`${pad(Math.floor(hangLeft/60))}:${pad(Math.ceil(hangLeft%60))}`;
+}
+function complete(i){
+ if(session.done.includes(i)){
+  if(i!==session.done[session.done.length-1]){alert('UNDOは最後に完了した種目から行ってください。');return}
+  session.done.pop();delete session.laps[i];session.splitStart=session.done.reduce((sum,k)=>sum+(session.laps[k]||0),0);
+ }else{
+  if(i!==nextStep()){alert('種目は上から順番にDONEを押してください。');return}
+  if(!session.running){alert('STARTまたはRESUMEで計測を開始してください。');return}
+  const elapsed=currentElapsed();session.laps[i]=Math.max(0,Math.round(elapsed-session.splitStart));session.done.push(i);session.splitStart=elapsed;
+ }save();render();
+}
+function startOrResume(){if(session.running)return;if(!session.steps){session.steps=stepsData().map(x=>({...x}));save()}started=Date.now();session.running=true;save();render()}
+function pauseTimer(){if(!session.running)return;session.elapsed=currentElapsed();session.running=false;save();render()}
+function finish(){if(!confirm('今回のセッションを保存しますか？'))return;const elapsed=Math.round(currentElapsed());const history=read('hyrox_history',[]);history.unshift({date:new Date().toISOString(),elapsed,done:session.done.length,laps:[...session.laps],lapMode:'split',mode:session.mode,config:{...cfg},steps:stepsData().map(x=>({...x}))});localStorage.setItem('hyrox_history',JSON.stringify(history));resetSession(false);tab('history')}
+function resetSession(ask=false){if(ask&&!confirm('現在のセッションをリセットしますか？'))return;session=fresh(session.mode);save();hangReset();render()}
+function hangStart(){if(hangRunning){hangLeft=Math.max(0,hangLeft-(Date.now()-hangStarted)/1000);hangRunning=false}else if(hangLeft>0){hangStarted=Date.now();hangRunning=true}}
+function hangReset(){hangRunning=false;hangLeft=cfg.hangTarget;render()}
+function updateSettings(){Object.keys(defaults).forEach(k=>cfg[k]=Number(document.getElementById(k).value)||defaults[k]);localStorage.setItem('hyrox_cfg',JSON.stringify(cfg));hangReset();render()}
+let calendarMonth=new Date();calendarMonth.setDate(1);
+let selectedHistoryDate=null;
+const localDateKey=date=>{const d=new Date(date);return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`};
+const historySteps=h=>Array.isArray(h.steps)?h.steps.map(x=>({...x})):(h.mode==='indoor'?legacyIndoorSteps():stepsFor({...defaults,...h.config}));
+function changeMonth(n){calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+n,1);selectedHistoryDate=null;renderHistory()}
+function selectHistoryDate(key){selectedHistoryDate=key;renderHistory()}
+function renderHistory(){
+ const history=read('hyrox_history',[]),year=calendarMonth.getFullYear(),month=calendarMonth.getMonth();
+ const monthPrefix=`${year}-${pad(month+1)}-`;
+ const monthSessions=history.filter(h=>localDateKey(h.date).startsWith(monthPrefix));
+ const days=[...new Set(monthSessions.map(h=>localDateKey(h.date)))];
+ document.getElementById('calendarTitle').textContent=`${year}年 ${month+1}月`;
+ document.getElementById('monthCount').textContent=`今月のトレーニング：${days.length}日（${monthSessions.length}セッション）`;
+ const first=new Date(year,month,1).getDay(),last=new Date(year,month+1,0).getDate();
+ const today=localDateKey(new Date());
+ if(!selectedHistoryDate||!selectedHistoryDate.startsWith(monthPrefix))selectedHistoryDate=days.includes(today)?today:(days.slice().sort().pop()||null);
+ let cells=['日','月','火','水','木','金','土'].map(d=>`<div class="calendar-weekday">${d}</div>`).join('');
+ for(let i=0;i<first;i++)cells+='<div></div>';
+ for(let d=1;d<=last;d++){const key=`${monthPrefix}${pad(d)}`,has=days.includes(key);cells+=`<button class="calendar-day ${has?'has-workout':''} ${key===selectedHistoryDate?'selected':''}" onclick="selectHistoryDate('${key}')" aria-label="${d}日${has?' トレーニングあり':''}">${d}</button>`}
+ document.getElementById('calendarGrid').innerHTML=cells;
+ document.getElementById('selectedDateTitle').textContent=selectedHistoryDate?`${Number(selectedHistoryDate.slice(-2))}日のトレーニング`:'SESSION HISTORY';
+ const entries=history.map((h,i)=>({h,i})).filter(({h})=>localDateKey(h.date)===selectedHistoryDate);
+ document.getElementById('historyList').innerHTML=entries.length?entries.map(({h,i})=>{
+  const data=historySteps(h);let previous=0;
+  const rows=data.map((step,j)=>{const raw=h.laps?.[j];let lap=null;if(Number.isFinite(raw)){if(h.lapMode==='split')lap=raw;else{lap=Math.max(0,raw-previous);previous=raw}}
+   return `<div class="history-row"><span>${pad(j+1)} ${esc(step.name)}<span class="muted" style="display:block">${esc(step.detail||'')}</span>${step.note?`<span class="history-goal">${esc(step.note)}</span>`:''}</span><span>${lap===null?'--:--':short(lap)}</span></div>`}).join('');
+  const editRows=data.map((step,j)=>{
+   const values=step.values||parseStepDetail(step.detail||'');const raw=h.laps?.[j];let lap='';if(Number.isFinite(raw)){if(h.lapMode==='split')lap=raw;else{const prev=j>0?Number(h.laps?.[j-1]||0):0;lap=Math.max(0,raw-prev)}}
+   return `<div class="history-edit-row"><strong>${pad(j+1)} ${esc(step.name)}</strong><div class="history-edit-grid"><label>重量 (kg)<input type="number" min="0" step="0.25" data-history="${i}" data-step="${j}" data-field="weight" value="${values.weight??0}"></label><label>回数 / 距離<input type="number" min="0" step="1" data-history="${i}" data-step="${j}" data-field="reps" value="${values.reps??0}"></label><label>セット数<input type="number" min="1" step="1" data-history="${i}" data-step="${j}" data-field="sets" value="${values.sets??1}"></label><label>ラップ (秒)<input type="number" min="0" step="1" data-history="${i}" data-step="${j}" data-field="lap" value="${lap}"></label></div></div>`}).join('');
+  return `<div class="history-card"><div class="history-head"><div><strong>${new Date(h.date).toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'})} · ${(h.mode||'outdoor').toUpperCase()}</strong><div class="muted">TOTAL ${fmt(h.elapsed)} · ${h.done}/${data.length} completed</div></div><button class="secondary" onclick="deleteHistory(${i})">削除</button></div><details><summary>種目別の記録・ラップタイム</summary>${rows}</details><details class="history-editor"><summary>重量・回数・セット数・ラップを編集</summary><div class="notice">ラップは秒単位で入力。変更後に「変更を保存」を押してください。合計時間はラップ合計とは別に記録された実測値です。</div>${editRows}<button onclick="saveHistoryEdits(${i})">変更を保存</button></details></div>`
+ }).join(''):'この日のトレーニング記録はありません。';
+}
+function parseStepDetail(detail){const m=String(detail).match(/(\d+(?:\.\d+)?)\s*(?:回|reps|steps|m|秒)/i),set=String(detail).match(/[×x]\s*(\d+)\s*セット/i),w=String(detail).match(/(\d+(?:\.\d+)?)\s*kg/i);return {reps:m?Number(m[1]):0,sets:set?Number(set[1]):1,weight:w?Number(w[1]):0}}
+function saveHistoryEdits(i){
+ const history=read('hyrox_history',[]),h=history[i];if(!h)return;
+ const inputs=[...document.querySelectorAll(`#historyList input[data-history="${i}"]`)];
+ const steps=historySteps(h),laps=[...(h.laps||[])];
+ // Old versions stored cumulative lap timestamps. Convert to split seconds before editing.
+ if(h.lapMode!=='split'){let prev=0;for(let j=0;j<laps.length;j++){if(Number.isFinite(laps[j])){const value=laps[j];laps[j]=Math.max(0,value-prev);prev=value}}}
+ for(const input of inputs){const j=Number(input.dataset.step),field=input.dataset.field;if(!steps[j])continue;
+  if(field==='lap'){if(input.value.trim()==='')delete laps[j];else laps[j]=Math.max(0,Math.round(Number(input.value)||0))}
+  else{if(!steps[j].values)steps[j].values=parseStepDetail(steps[j].detail||'');steps[j].values[field]=Number(input.value)||0}
+ }
+ for(const step of steps){if(step.values){const v=step.values;const unit=(step.detail||'').includes('m')&&!((step.detail||'').includes('回'))?'m':'回';step.detail=`${v.reps}${unit} × ${v.sets}セット${v.weight?' · '+v.weight+'kg':''}`}}
+ h.steps=steps;h.laps=laps;h.lapMode='split';localStorage.setItem('hyrox_history',JSON.stringify(history));renderHistory();
+}
+function deleteHistory(i){if(!confirm('この履歴を削除しますか？'))return;const h=read('hyrox_history',[]);h.splice(i,1);localStorage.setItem('hyrox_history',JSON.stringify(h));renderHistory()}
+function tab(t){['train','history','settings'].forEach(x=>{document.getElementById(x).classList.toggle('hide',x!==t);document.getElementById('tab'+x[0].toUpperCase()+x.slice(1)).className=x===t?'active':'secondary'});if(t==='history')renderHistory()}
+Object.keys(defaults).forEach(k=>document.getElementById(k).value=cfg[k]);
+setInterval(()=>{if(hangRunning){const left=hangLeft-(Date.now()-hangStarted)/1000;if(left<=0){hangLeft=0;hangRunning=false;if(navigator.vibrate)navigator.vibrate([200,100,200])}document.getElementById('hangClock').textContent=`${pad(Math.floor(Math.max(0,left)/60))}:${pad(Math.ceil(Math.max(0,left)%60))}`}if(session.running){document.getElementById('clock').textContent=fmt(currentElapsed());const i=nextStep();if(i>=0){const el=document.getElementById('lap-'+i);if(el)el.textContent=short(currentElapsed()-session.splitStart)}}},200);
+renderIndoorSettings();render();
+</script></body></html>
